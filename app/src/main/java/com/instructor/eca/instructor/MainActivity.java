@@ -10,24 +10,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 
-<<<<<<< HEAD
-public class MainActivity extends AppCompatActivity{
-=======
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
->>>>>>> origin/master
+public class MainActivity extends Activity  {
 
-public class MainActivity extends Activity  implements  View.OnClickListener {
-
-    private Button btn;
-    private int a;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_log_screen);
     }
 
 }

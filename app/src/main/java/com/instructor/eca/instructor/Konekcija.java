@@ -15,7 +15,7 @@ public class Konekcija {
     private String cookie = "";
     private String level = "";
     public StringBuffer get(String staTrazim) throws Exception {
-        URL url = new URL(R.string.URL + "" "/" + cookie + "/" + staTrazim);
+        URL url = new URL(R.string.URL + "/" + cookie + "/" + staTrazim);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         BufferedReader input = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -59,7 +59,7 @@ public class Konekcija {
         return connection;
     }
     public void postInstruktor(String instruktor) throws Exception {
-        HttpURLConnection h = new this.post(instruktor);
+        HttpURLConnection h = post(instruktor);
 
         h.disconnect();
     }
