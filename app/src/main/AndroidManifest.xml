@@ -24,16 +24,19 @@
             </intent-filter>
         </activity>
 
-        <intent-filter>
-            <action android:name="com.instructor.eca.instructor.Log" />
 
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
+
 
         <activity
             android:name=".Log_screen"
             android:label="@string/title_activity_log_screen"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <intent-filter>
+            <action android:name="com.instructor.eca.instructor.Log" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+
+        </activity>
+
     </application>
 
 </manifest>

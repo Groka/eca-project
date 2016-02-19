@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Instructor</string>
     <string name="action_settings">Settings</string>
+<<<<<<< HEAD
     <string name="title_activity_log">Sign in</string>
 
     <!-- Strings related to login -->
@@ -16,4 +17,8 @@
         completions."
     </string>
     <string name="title_activity_log_screen">Log_screen</string>
+=======
+    <string name="hello_world">Hello World!</string>
+    <string name="URL">nas url</string>
+>>>>>>> origin/master
 </resources>
