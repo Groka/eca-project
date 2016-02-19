@@ -11,10 +11,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-
 public class Konekcija {
-    String cookie = "";
-    String level = "";
+    private String cookie = "";
+    private String level = "";
     public StringBuffer get(String staTrazim) throws Exception {
         URL url = new URL(R.string.URL + "" "/" + cookie + "/" + staTrazim);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -29,21 +28,30 @@ public class Konekcija {
         return response;
     }
 
-    public void getLogin(String email, String password) throws Exception{
+    public boolean getLogin(String email, String password) throws Exception{
         URL url = new URL("/login/" + email + "/" + password);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         int responseCode = connection.getResponseCode();
         if(responseCode == 401) {
             //Otvoriti prozorcic
+            connection.disconnect();
+            return false;
         }
         else {
             BufferedReader input = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             String info = input.readLine();
-
+            String[] niz = info.split(" ");
+            cookie = niz[0];
+            level = niz[1];
+            connection.disconnect();
+            return true;
         }
     }
-    public HttpURLConnection post(String staTrazim) throws Exception {
+
+
+
+    private HttpURLConnection post(String staTrazim) throws Exception {
         URL url = new URL(R.string.URL + "/" + cookie + "/" + staTrazim);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("POST");
